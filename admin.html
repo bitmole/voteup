@@ -20,17 +20,21 @@
 
 <body>
 <h2>Results</h2>
-<p>Rock: <span id="rock">0</span></p>
+<p>Rock: <span id="rock"></span></p>
 
-<p class="down">Suck: <span id="suck">0</span></p>
+<p class="down">Suck: <span id="suck"></span></p>
 
 <script type="text/javascript">
 $(function(){
     var socket = io.connect('http://localhost:3000');
+    socket.emit('init');
 
-    socket.on('voted', function(data) {
-        console.log(data);
-        updateResults(data);
+    socket.on('current', function(results) {
+        updateResults(results);
+    });
+
+    socket.on('updated', function(results) {
+        updateResults(results);
     });
 
     function updateResults(data) {

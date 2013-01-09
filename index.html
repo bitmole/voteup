@@ -43,7 +43,7 @@ $(function(){
         send({rock: true});
     });
 
-    $('a[href="/down"]').click(function() {
+    $('a[href="/down"]').click(function(event) {
         event.preventDefault();
         send({rock: false});
     })
