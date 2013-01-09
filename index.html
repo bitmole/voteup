@@ -3,15 +3,9 @@
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<!--
 <script type="text/javascript">
-  var socket = io.connect('http://localhost:3000');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
+    var socket = io.connect(document.location.origin);
 </script>
--->
     <style>
         body{background: #f7f0d4;
             background: -moz-linear-gradient(top,  #f7f0d4 0%, #ffffff 100%);
@@ -49,7 +43,6 @@ $(function(){
     })
 
     function send(vote) {
-        var socket = io.connect(document.location.origin);
         socket.emit('vote', vote);
     }
 });
