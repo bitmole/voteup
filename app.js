@@ -2,7 +2,10 @@ var app = require('http').createServer(handler)
   , io = require('socket.io').listen(app, {log: false})
   , fs = require('fs')
 
-app.listen(3000);
+var port = process.env.PORT || 5000
+app.listen(port, function() {
+    console.log('Listening on ' + port);
+});
 
 function handler (req, res) {
   fs.readFile(__dirname + req.url, function (err, data) {
