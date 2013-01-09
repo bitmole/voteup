@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<!--
+<script type="text/javascript">
+  var socket = io.connect('http://localhost:3000');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+-->
+</head>
+
+<body>
+<h2>Hello</h2>
+<a href="/up">You rock</a>
+<a href="/down">You really suck</a>
+
+<script type="text/javascript">
+$(function(){
+
+    $('a[href="/up"]').click(function(event) {
+        event.preventDefault();
+        send({rock: true});
+    });
+
+    $('a[href="/down"]').click(function() {
+        event.preventDefault();
+        send({rock: false});
+    })
+
+    function send(vote) {
+        var socket = io.connect('http://localhost:3000');
+        socket.emit('vote', vote);
+    }
+});
+</script>
+</body>
+
+</html>
