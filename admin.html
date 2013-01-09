@@ -3,15 +3,26 @@
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
+    <style>
+        body{background: #f7f0d4;
+            background: -moz-linear-gradient(top,  #f7f0d4 0%, #ffffff 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f0d4), color-stop(100%,#ffffff));
+            background: -webkit-linear-gradient(top,  #f7f0d4 0%,#ffffff 100%);
+            background: -o-linear-gradient(top,  #f7f0d4 0%,#ffffff 100%);
+            background: -ms-linear-gradient(top,  #f7f0d4 0%,#ffffff 100%);
+            background: linear-gradient(to bottom,  #f7f0d4 0%,#ffffff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f0d4', endColorstr='#ffffff',GradientType=0 );text-align:center;padding:20px;}
+        h2{text-transform: uppercase;}
+        p{display:inline-block;width:100px;height:70px;padding:10px;margin:5px;border-radius:6px;background:#086D23 url(votes.png) no-repeat 40px 32px;color:#fff;font-size:16px;}
+        p.down{background-position:40px -54px;background-color:#BC1D0F;}
+    </style>
 </head>
 
 <body>
 <h2>Results</h2>
-<p>
-Rock: <span id="rock">0</span>
+<p>Rock: <span id="rock">0</span></p>
 
-<p>
-Suck: <span id="suck">0</span>
+<p class="down">Suck: <span id="suck">0</span></p>
 
 <script type="text/javascript">
 $(function(){
