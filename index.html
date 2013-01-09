@@ -49,7 +49,7 @@ $(function(){
     })
 
     function send(vote) {
-        var socket = io.connect('http://localhost:5000');
+        var socket = io.connect(document.location.origin);
         socket.emit('vote', vote);
     }
 });
