@@ -9,14 +9,20 @@
         p{background:#ccc;display:inline-block;width:45%;padding:10px;margin:15px auto;border-radius:6px;text-decoration:none;color:#333;font:40px sans-serif;text-transform: uppercase;border:1px solid #999;text-shadow: 1px 1px 1px #333;}
         p span{display:block;font-size:65px;line-height:86px;color:#086D23;}
 p.down span{color:#BC1D0F;}
+        a{display:block}
     </style>
 </head>
 
 <body>
 <h2>Results</h2>
-<p>Rock: <span id="rock"></span></p>
 
+
+<p>Rock: <span id="rock"></span></p>
 <p class="down">Suck: <span id="suck"></span></p>
+
+
+<a href="/reset">Reset</a>
+
 
 <script type="text/javascript">
 $(function(){
@@ -35,6 +41,11 @@ $(function(){
         $('#rock').text(data.rock);
         $('#suck').text(data.suck);
     }
+
+    $('a[href="/reset"]').click(function(event) {
+        event.preventDefault();
+        socket.emit('reset');
+    });
 });
 </script>
 </body>
