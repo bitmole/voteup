@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,27 +8,18 @@
     var socket = io.connect(document.location.origin);
 </script>
     <style>
-        body{background: #f7f0d4;
-            background: -moz-linear-gradient(top,  #f7f0d4 0%, #ffffff 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f0d4), color-stop(100%,#ffffff));
-            background: -webkit-linear-gradient(top,  #f7f0d4 0%,#ffffff 100%);
-            background: -o-linear-gradient(top,  #f7f0d4 0%,#ffffff 100%);
-            background: -ms-linear-gradient(top,  #f7f0d4 0%,#ffffff 100%);
-            background: linear-gradient(to bottom,  #f7f0d4 0%,#ffffff 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f0d4', endColorstr='#ffffff',GradientType=0 );text-align:center;padding:20px;}
+        body{background: #efefef;text-align:center;padding:20px 5px;}
         h2{text-transform: uppercase;}
-        a{display:inline-block;width:48px;height:46px;text-indent:-9999px;padding:10px;margin:5px;border-radius:6px;background:#086D23 url(votes.png) no-repeat 8px 8px;
-        }
-        a.down{background-position:8px -78px;background-color:#BC1D0F;}
-        a:active{background-position:10px 10px;}
-        a.down:active{background-position:10px -80px;}
+        a{display:block;width:100%;height:46px;max-width:280px;padding:10px 0;margin:15px auto;border-radius:6px;background:#086D23;text-decoration:none;color:#ddd;font:20px/46px sans-serif;text-transform: uppercase;border:1px solid #999;text-shadow: 1px 1px 1px #333;}
+        a.down{background-color:#BC1D0F;}
+        a img{vertical-align:top;margin-right:10px}
     </style>
 </head>
 
 <body>
 <h2>Hello</h2>
-<a href="/up" class="up">You rock</a>
-<a href="/down" class="down">You really suck</a>
+<a href="/up" class="up"><img src="up.png" alt="You rock" />You rock</a>
+<a href="/down" class="down"><img src="down.png" alt="You really really suck" /> You really suck</a>
 
 <script type="text/javascript">
 $(function(){
