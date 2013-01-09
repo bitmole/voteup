@@ -10,5 +10,7 @@ node app.js
 
 Usage
 -----
+
 Open http://localhost:3000/index.html to vote.
+
 Open http://localhost:3000/admin.html to view results.
