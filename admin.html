@@ -37,7 +37,7 @@ $(function(){
         $('#suck').text(data.suck);
     }
 
-    $('a[href="/reset"]', function(event) {
+    $('a[href="/reset"]).click(function(event) {
         event.preventDefault();
         socket.emit('reset');
     });
