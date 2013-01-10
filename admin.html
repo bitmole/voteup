@@ -19,6 +19,7 @@
 
 <p class="down">Suck: <span id="suck"></span></p>
 <a href="/reset">Reset</a>
+
 <script type="text/javascript">
 $(function(){
     var socket = io.connect(document.location.origin);
@@ -36,6 +37,11 @@ $(function(){
         $('#rock').text(data.rock);
         $('#suck').text(data.suck);
     }
+
+    $('a[href="reset"]', function(event) {
+        event.preventDefault();
+        socket.emit('reset');
+    });
 });
 </script>
 </body>
