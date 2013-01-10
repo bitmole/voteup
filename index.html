@@ -16,9 +16,13 @@
     <style>
         body{background: #efefef;text-align:center;padding:20px 5px;}
         h2{text-transform: uppercase;}
-        a{display:block;width:100%;height:46px;max-width:280px;padding:10px 0;margin:15px auto;border-radius:6px;background:#086D23;text-decoration:none;color:#ddd;font:20px/46px sans-serif;text-transform: uppercase;border:1px solid #999;text-shadow: 1px 1px 1px #333;}
+        a{display:block;width:100%;height:46px;max-width:280px;padding:10px 0;margin:15px auto 45px auto;border-radius:6px;background:#086D23;text-decoration:none;color:#ddd;font:20px/46px sans-serif;text-transform: uppercase;border:1px solid #999;text-shadow: 1px 1px 1px #333;-webkit-transition: all .2s ease-in-out;}
         a.down{background-color:#BC1D0F;}
         a img{vertical-align:top;margin-right:10px}
+        a:hover,a:active{background-color: #014609;}
+        a.down:hover,a.down:active{background-color: #AD310B;
+    transition: background-color 1ms linear;}
+        a:hover img,a:active img{-webkit-transform: scale(1.1);}
     </style>
 </head>
 
