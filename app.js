@@ -25,13 +25,21 @@ var results = {
     update: function(vote) {
         vote.rock ? this.rock++ : this.suck++;
         return this;
+    },
+    reset: function() {
+        this.rock = this.suck = 0;
+        return this;
     }
 }
 
 io.sockets.on('connection', function (socket) {
 
-  socket.on('init', function (vote) {
+  socket.on('init', function () {
     io.sockets.emit('current', results);
+  });
+
+  socket.on('reset', function () {
+    io.sockets.emit('current', results.reset());
   });
 
   socket.on('vote', function (vote) {

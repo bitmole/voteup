@@ -2,17 +2,12 @@
 <html lang="en">
 
 <head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<!--
 <script type="text/javascript">
-  var socket = io.connect('http://localhost:3000');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
+    var socket = io.connect(document.location.origin);
 </script>
--->
     <style>
         body{background: #efefef;text-align:center;padding:20px 5px;}
         h2{text-transform: uppercase;}
@@ -45,7 +40,6 @@ $(function(){
     })
 
     function send(vote) {
-        var socket = io.connect(document.location.origin);
         socket.emit('vote', vote);
     }
 });
