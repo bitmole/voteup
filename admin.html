@@ -15,9 +15,8 @@
 
 <body>
 <h2>Results</h2>
-<p>Rock: <span id="rock"></span></p>
-
-<p class="down">Suck: <span id="suck"></span></p>
+<p>Rock: <span id="rock">?</span></p>
+<p class="down">Suck: <span id="suck">?</span></p>
 <a href="/reset">Reset</a>
 
 <script type="text/javascript">
@@ -38,7 +37,7 @@ $(function(){
         $('#suck').text(data.suck);
     }
 
-    $('a[href="reset"]', function(event) {
+    $('a[href="/reset"]', function(event) {
         event.preventDefault();
         socket.emit('reset');
     });
